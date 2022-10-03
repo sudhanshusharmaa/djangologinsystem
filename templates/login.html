@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Login {% endblock title %}
+
+{% block body %}
+
+<div class="container my-10">
+    <div class="container-fluid px-0">
+        <img src="/static/img/sixth.jfif" class="d-block w-100 mx-0" alt="...">
+    </div>
+    <h1>Login to your Account</h1>
+    <form class="form-login" method="post" action="/login/">
+      {% csrf_token %} 
+        <div class="form-group">
+          <label for="username"><strong> Username</strong></label>
+          <input type="text" class="form-control" id="username" aria-describedby="username" name="username" placeholder="Enter Username">
+          <small id="text" class="form-text text-muted">We'll never share your Username with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="password"><strong>Password</strong></label>
+          <input type="password" class="form-control" id="inputpassword" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/password_reset"><button type="button" class="btn btn-warning">Forget Password</button></a>
+      </form>
+</div>
+
+
+{% endblock body %}

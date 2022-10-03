@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Signup{% endblock title %}
+
+{% block body %}
+
+<div class="container my-10">
+    <div class="container-fluid px-0">
+        <img src="/static/img/sixth.jfif" class="d-block w-100 mx-0" alt="...">
+    </div>
+    <h1> Create A New Account </h1>
+    <form class="form-signup" method="post" action="/signup/">
+      {% csrf_token %}
+        <div class="form-group">
+            <label for="name"><strong>Name</strong></label>
+            <input type="name" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label for="username"><strong>Username</strong></label>
+            <input type="test" class="form-control" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label for="email"><strong>Email address</strong></label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="email" name=email placeholder="Enter email">
+          <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="password"><strong>Password</strong></label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="password"><strong>Password</strong></label>
+          <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="confirmpassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+{% endblock body %}
